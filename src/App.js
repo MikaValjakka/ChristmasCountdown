@@ -69,7 +69,6 @@ function App() {
 }
 
 function Countdown() {
-  const COUNTDOWNTIME_TARGET = new Date("2023-12-25T00:00:00");
   // initial state set to 0,0,0,0 just to demonstrate useState initial mount
   const [leftTime, setLeftTime] = useState({
     days: 0,
@@ -79,6 +78,7 @@ function Countdown() {
   });
 
   useEffect(() => {
+    const COUNTDOWNTIME_TARGET = new Date("2023-12-25T00:00:00");
     // Calculate time left to COUNTDOWNTIME_TARGET, as days, hours,minutes and seconds
     // Then passing every const as property to setLeftTime state
     // When setLeftTime state changes, the component re-renders and time is re-painted to DOM
@@ -97,7 +97,7 @@ function Countdown() {
 
     // Cleanup function to clear the interval when the component unmounts
     return () => clearInterval(timer);
-  }, [COUNTDOWNTIME_TARGET]); // Empty dependency array ensures that this effect runs once after the initial render
+  }, []); // Empty dependency array ensures that this effect runs once after the initial render
 
   return (
     <div className="countdown">
