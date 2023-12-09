@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Poppins&family=Roboto&display=swap");
+
+body {
+  background-image: url("/public/background.jpg");
+  background-size: cover; /* Optional: Ensures the background image covers the entire element */
+  /* background-repeat: no-repeat; /* Optional: Prevents the background image from repeating. BG image is not propriet for mobile! */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.christmasText {
+  color: rgb(255, 255, 255);
+  font-family: "Mountains of Christmas", serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.tillChristmas {
+  font-size: 120px;
+  text-shadow: #fc0 1px 0 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.countdown .content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+  margin-top: 10%;
+  gap: 12px;
+}
+.countdown h2 {
+  margin-bottom: 20px;
+  font-size: 50px;
+}
+
+.countdown .box {
+  width: calc(100% / 4);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 150px;
+  max-width: 150px;
 }
 
-.App-link {
-  color: #61dafb;
+.countdown .value {
+  font-size: 30px;
+  font-weight: 600;
+  background-color: #6aca77;
+  color: #94eca0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  width: 80px;
+  height: 80px;
+  position: relative;
+  box-shadow: -2px 0px 10px 1px rgba(255, 255, 255, 0.678);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (min-width: 550px) {
+  .countdown .content {
+    gap: 30px;
   }
-  to {
-    transform: rotate(360deg);
+  .countdown .value {
+    font-size: 50px;
+    width: 120px;
+    height: 120px;
   }
+  .countdown .box {
+    height: 200px;
+    max-width: 200px;
+  }
+}
+
+@media screen and (min-width: 790px) {
+  .countdown .value {
+    font-size: 100px;
+    height: 200px;
+    width: 200px;
+  }
+  .countdown .box {
+    max-width: 200px;
+    height: 250px;
+  }
+}
+
+.countdown .value::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  z-index: 2;
+  background-color: #313131b0;
+  box-shadow: 0px 0px 5px 0px #2e2f2ed6;
+}
+.countdown .value::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: -7px;
+  width: 10px;
+  height: 20px;
+  background-color: #969696;
+  box-shadow: inset -1px 1px 5px 1px #0e0e0ead;
+}
+
+.countdown .label {
+  font-size: 20px;
+  font-weight: 100;
+  letter-spacing: 4px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  /* Adjust your styles for mobile here */
+  .tillChristmas {
+    font-size: 30px; /* Adjust the font size for mobile */
+    line-height: 1.2; /* Adjust the line height for mobile */
+  }
+
+  .countdown .content {
+    gap: 4px;
+  }
+  /* Add more styles as needed for other elements */
 }
