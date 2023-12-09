@@ -97,7 +97,7 @@ function Countdown() {
 
     // Cleanup function to clear the interval when the component unmounts
     return () => clearInterval(timer);
-  }, []); // Empty dependency array ensures that this effect runs once after the initial render
+  }, [COUNTDOWNTIME_TARGET]); // Empty dependency array ensures that this effect runs once after the initial render
 
   return (
     <div className="countdown">
