@@ -78,7 +78,7 @@ function Countdown() {
   });
 
   useEffect(() => {
-    const COUNTDOWNTIME_TARGET = new Date("2023-12-25T00:00:00");
+    const COUNTDOWNTIME_TARGET = new Date("2024-12-25T00:00:00");
     // Calculate time left to COUNTDOWNTIME_TARGET, as days, hours,minutes and seconds
     // Then passing every const as property to setLeftTime state
     // When setLeftTime state changes, the component re-renders and time is re-painted to DOM
